@@ -2,17 +2,26 @@
 
 /**
  * _strncpy - copies string
- * @dest: destination string
- * @src: source string
- * @n: number of string
- * Return: destination string
+ * @dest: input value
+ * @src: input value
+ * @n: input value
+ * Return: dest
  */
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
+	int j;
 
-	for (i = 0 ; i < n ; i++)
-		dest[i] = src[i];
+	j = 0;
+	while (j < n && src[j] != '\0')
+	{
+		dest[j] = src[j];
+		j++;
+	}
+	while (j < n)
+	{
+		dest[j] = '\0';
+		j++;
+	}
 	return (dest);
 }
